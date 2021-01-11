@@ -7,8 +7,6 @@ export default (app) => {
     app.use('/', route);
 
     route.get('/', (req, res) => {
-        // let drink = { name: 'Coca-Cola', price: 2100 };
-        // Drink.find(drink).then(drink => {
         Drink.find().then(drink => {
             if (!drink.length) return res.status(404).send({ err: 'Drink not found' });
             res.send(`find result: ${drink}`);
@@ -25,7 +23,6 @@ export default (app) => {
     });
 
     route.put('/:name/:Uname/:price', (req, res) => {
-        // let drink = { name: 'pepsi', price: 1700 };
         let drink = { name: req.params.name };
         let changeDrink = { name: req.params.Uname, price: req.params.price };
 
@@ -35,7 +32,6 @@ export default (app) => {
     });
 
     route.delete('/:name', (req, res) => {
-        // let drink = { name: 'Coca-Cola', price: 2100 };
         let drink = { name: req.params.name };
 
         Drink.deleteOne(drink)
