@@ -1,0 +1,9 @@
+back/node_modules
+back/package-lock.json
+
+client/node_modules
+client/package-lock.json
+
+back/src/conf/.env
+back/log_dir
+back/error.log

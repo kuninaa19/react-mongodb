@@ -1,0 +1,46 @@
+version: "3.8"
+services:
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes: 
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - back
+      - client
+
+  client:
+    build: ./client
+    ports:
+      - "3050:3000"
+    volumes:
+      - ./client/:/usr/local/app/
+      - exclude:/usr/local/app/node_modules/
+
+  back:
+    build: ./back
+    ports:
+      - "4050:4000"
+    depends_on:
+      - redis
+      - mongo
+    volumes:
+      - ./back/:/usr/local/app/
+      - exclude:/usr/local/app/node_modules/
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_volume:/data
+       
+  mongo:
+    image : mongo
+    ports:
+      - "27017:27017"
+    
+volumes:
+  redis_volume:
+  exclude:
