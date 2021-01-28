@@ -1,0 +1,12 @@
+.template {
+  width: 600px;
+  height: 600px;
+
+  position: relative;
+  background: white;
+  border-radius: 15px;
+
+  margin: 60px auto 60px;
+  display: flex;
+  flex-direction: column;
+}

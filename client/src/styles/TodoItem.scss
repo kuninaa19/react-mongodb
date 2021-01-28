@@ -1,0 +1,52 @@
+.itemContainer {
+  display: flex;
+  align-items: center;
+  background-color: #343a40;
+  border-radius: 10px;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  &:hover {
+    .remove {
+      display: initial;
+    }
+  }
+}
+
+.checkCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  border: 1px solid #ced4da;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  cursor: pointer;
+  &.done {
+    border: 1px solid #38d9a9;
+    color: #38d9a9;
+  }
+}
+
+.text {
+  flex: 1;
+  font-size: 21px;
+  color: #ced4da;
+  &.done {
+    color: #495057;
+  }
+}
+
+.remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: grey;
+  font-size: 24px;
+  cursor: pointer;
+  &:hover {
+    color: #ff6b6b;
+  }
+  display: none;
+}

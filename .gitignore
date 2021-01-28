@@ -3,6 +3,7 @@ back/package-lock.json
 
 client/node_modules
 client/package-lock.json
+client/.eslintcache
 
 back/src/conf/.env
 back/log_dir
